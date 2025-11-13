@@ -34,8 +34,7 @@ static class Window extends JFrame {
 
                 getContentPane().setBackground(new java.awt.Color(colorsR, colorsG, colorsB));
                 super.mouseClicked(e);
-                ColorFacedFile m = new ColorFacedFile(colorsR, colorsG, colorsB);
-
+                new ColorFacedFile(colorsR, colorsG, colorsB);
             }
         });
 
