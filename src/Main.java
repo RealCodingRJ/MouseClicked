@@ -10,6 +10,16 @@ static class Window extends JFrame {
 
         super("Color Mouse Selector");
 
+        JLabel labelR = new JLabel();
+        JLabel labelG = new JLabel();
+        JLabel labelB = new JLabel();
+
+        getContentPane().setLayout(new FlowLayout());
+
+        getContentPane().add(labelR);
+        getContentPane().add(labelG);
+        getContentPane().add(labelB);
+
         getContentPane().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -18,8 +28,14 @@ static class Window extends JFrame {
                 int colorsG = getRandomColor(5, 255);
                 int colorsB = getRandomColor(9, 255);
 
+                labelR.setText("R: " + colorsR);
+                labelG.setText("G: " + colorsG);
+                labelB.setText("B: " + colorsB);
+
                 getContentPane().setBackground(new java.awt.Color(colorsR, colorsG, colorsB));
                 super.mouseClicked(e);
+                ColorFacedFile m = new ColorFacedFile(colorsR, colorsG, colorsB);
+
             }
         });
 
